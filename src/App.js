@@ -1,26 +1,26 @@
 
-import './App.css';
-import { BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+// import './App.css';
+import { BrowserRouter, Navigate} from 'react-router-dom';
+import {Routes, Route} from "react-router";
 import Tuiter from './tuiter';
 import Labs from './labs';
 
-import HelloWorld from './labs/a3/hello';
-import JavaScript from './labs/a3/java-script';
+
 
 
 function App() {
   return (
-    
-    <div className='container'>
+    <BrowserRouter>
+      <div className="container">
+        <Routes> 
+          <Route path="/"         element={<Navigate to="/labs"/>}/> 
+          <Route path="/labs/*" element={<Labs/>}/>    
+          <Route path="/tuiter/*" element={<Tuiter/>}/>
+        </Routes>
+        
+      </div>
       
-      <Labs/>
-      <HelloWorld/>
-      <Tuiter/>
-      <JavaScript/>
-      
-
-    </div>
-    
+    </BrowserRouter>
   );
 }
 
