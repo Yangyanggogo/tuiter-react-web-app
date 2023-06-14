@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import * as Icon from 'react-bootstrap-icons';
-import {createTuit} from "./reducers/tuits-reducer";
+import {createTuitThunk} from "./services/tuits-thunks";
+
 import {useDispatch} from "react-redux";
 
 
@@ -12,7 +13,7 @@ const WhatsHappening = () => {
     const newTuit = {
       tuit: whatsHappening
     }
-    dispatch(createTuit(newTuit));
+    dispatch(createTuitThunk(newTuit));
     setWhatsHappening("");
 
  }

@@ -7,6 +7,9 @@ import HomeScreen from "./home";
 import ExploreScreen from "./explore";
 import BookmarksScreen from "./bookmarks";
 import ProfileScreen from "./profile";
+import LoginScreen from "./user/login-screen";
+import RegisterScreen from "./user/register-screen";
+import authReducer from "./reducers/auth-reducer";
 
 import whoReducer from "./reducers/who-reducer";
 import tuitsReducer from "./reducers/tuits-reducer";
@@ -17,7 +20,8 @@ const store = configureStore(
   {reducer: 
     {who: whoReducer,
     tuits:tuitsReducer,
-  exploreTuits: exploreReducer}
+    user: authReducer,
+    exploreTuits: exploreReducer}
 
 });
 
@@ -35,6 +39,9 @@ function Tuiter() {
               <Route path="/home" element={<HomeScreen />} />
               <Route path="/explore" element={<ExploreScreen />} />
               <Route path="/bookmarks" element={<BookmarksScreen />} />
+              <Route path="/login"    element={<LoginScreen    />} />
+              <Route path="/register" element={<RegisterScreen />} />
+
               <Route path="/profile" element={<ProfileScreen />} />
               </Routes>
             </div>
